@@ -1,6 +1,8 @@
-hash: 4df411bc61bd52dd77f3e6c72a598aac17f5e7114cb0a4b99b20f64e0b49ceeb
-updated: 2017-02-27T14:15:50.4942874+08:00
+hash: 14c8e28b4ab3ee1c0ebd54c20b354c1df390d526cfd6fa62c5983ea5e20d1d9b
+updated: 2017-02-27T15:13:19.4791853+08:00
 imports:
+- name: github.com/mattn/goveralls
+  version: 9d621f6940639bf287ecbb6f585a2c26eeba3bbe
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 - name: go.uber.org/atomic

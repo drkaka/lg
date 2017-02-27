@@ -6,3 +6,5 @@ import:
   version: ^1.0.0-rc.2
   subpackages:
   - zapcore
+- package: github.com/mattn/goveralls
+  version: ^0.0.1
