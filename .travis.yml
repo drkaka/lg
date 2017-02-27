@@ -13,10 +13,12 @@ cache:
   directories:
     - vendor
 install:
-  - make dependencies
+  - @echo "Installing Glide and locked dependencies..."
+	- glide --version || go get -u -f github.com/Masterminds/glide
+	- glide install
+	- @echo "Installing test dependencies..."
+	- go install ./vendor/github.com/mattn/goveralls
 script:
-  - make lint
-  - make test
-  - make bench
+  - go test -race -v ./...
 after_success:
-  - make coveralls
+  - goveralls -service=travis-ci
