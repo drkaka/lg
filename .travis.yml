@@ -17,7 +17,7 @@ install:
   - glide install 
   - go install ./vendor/github.com/mattn/goveralls 
 script:
-  - go test -race -v ./... 
+  - go test -race -v
 after_success:
   - goveralls -service=travis-ci 
   
