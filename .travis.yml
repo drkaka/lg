@@ -16,7 +16,6 @@ install:
   - go get -v github.com/Masterminds/glide
   - cd $GOPATH/src/github.com/Masterminds/glide && go install && cd -
 	- glide install
-	- echo "Installing test dependencies..."
 	- go install ./vendor/github.com/mattn/goveralls
 script:
   - go test -race -v ./...
