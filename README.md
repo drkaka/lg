@@ -1,4 +1,4 @@
-# lg [![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov]
+# lg  [![Build Status][ci-img]][ci] [![Coverage Status][cov-img]][cov]
 The logger to use. 
 
 [ci-img]: https://travis-ci.org/drkaka/lg.svg?branch=master
