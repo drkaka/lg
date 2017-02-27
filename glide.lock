@@ -1,8 +1,6 @@
-hash: 14c8e28b4ab3ee1c0ebd54c20b354c1df390d526cfd6fa62c5983ea5e20d1d9b
-updated: 2017-02-27T15:13:19.4791853+08:00
+hash: 96066ac6a330e905043a5997a3602922c5a6c5fb739a588a228b64005c3c5d0f
+updated: 2017-02-27T15:38:14.406012+08:00
 imports:
-- name: github.com/mattn/goveralls
-  version: 9d621f6940639bf287ecbb6f585a2c26eeba3bbe
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 - name: go.uber.org/atomic
@@ -15,4 +13,12 @@ imports:
   - internal/exit
   - internal/multierror
   - zapcore
-testImports: []
+testImports:
+- name: github.com/mattn/goveralls
+  version: 9d621f6940639bf287ecbb6f585a2c26eeba3bbe
+- name: github.com/pborman/uuid
+  version: 1b00554d822231195d1babd97ff4a781231955c9
+- name: golang.org/x/tools
+  version: 496819729719f9d07692195e0a94d6edd2251389
+  subpackages:
+  - cover

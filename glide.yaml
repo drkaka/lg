@@ -1,4 +1,4 @@
-package: .
+package: github.com/drkaka/lg
 import:
 - package: github.com/satori/go.uuid
   version: ^1.1.0
@@ -6,5 +6,10 @@ import:
   version: ^1.0.0-rc.2
   subpackages:
   - zapcore
+testImport:
 - package: github.com/mattn/goveralls
   version: ^0.0.1
+- package: github.com/pborman/uuid
+- package: golang.org/x/tools
+  subpackages:
+  - cover
