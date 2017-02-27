@@ -13,10 +13,10 @@ cache:
   directories:
     - vendor
 install:
-  - @echo "Installing Glide and locked dependencies..."
+  - echo "Installing Glide and locked dependencies..."
 	- glide --version || go get -u -f github.com/Masterminds/glide
 	- glide install
-	- @echo "Installing test dependencies..."
+	- echo "Installing test dependencies..."
 	- go install ./vendor/github.com/mattn/goveralls
 script:
   - go test -race -v ./...
