@@ -26,10 +26,10 @@ func Rfc3339NanoEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
 }
 
 // InitLogger must be first to be called.
-func InitLogger(debug string) {
+func InitLogger(debug bool) {
 	var cfg zap.Config
 
-	if debug == "debug" {
+	if debug {
 		cfg = zap.NewDevelopmentConfig()
 	} else {
 		cfg = zap.NewProductionConfig()

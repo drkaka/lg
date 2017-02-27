@@ -5,6 +5,6 @@ import (
 )
 
 func TestLg(t *testing.T) {
-	InitLogger("debug")
+	InitLogger(true)
 	L(nil).Info("test message.")
 }
