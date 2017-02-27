@@ -13,10 +13,11 @@ cache:
     - vendor
 install:
   - go get -v github.com/Masterminds/glide 
-  - cd $GOPATH/src/github.com/Masterminds/glide && go install && cd - 
-	- glide install 
-	- go install ./vendor/github.com/mattn/goveralls 
+  - cd $GOPATH/src/github.com/Masterminds/glide && go install && cd -
+  - glide install 
+  - go install ./vendor/github.com/mattn/goveralls 
 script:
   - go test -race -v ./... 
 after_success:
   - goveralls -service=travis-ci 
+  
