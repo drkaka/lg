@@ -2,7 +2,6 @@ package lg
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"net/http"
 	"time"
@@ -18,7 +17,9 @@ var (
 	log *zap.Logger
 )
 
-const requestIDKey = 0
+type key int
+
+const requestIDKey key = 0
 
 // Rfc3339NanoEncoder to encode time field to RFC3339Nano format.
 func Rfc3339NanoEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
@@ -98,7 +99,7 @@ func Recoverer(next http.Handler) http.Handler {
 		defer func() {
 			if err := recover(); err != nil {
 				// stack := stack(3)
-				L(r.Context()).Error(fmt.Sprint(err), zap.Stack("stack"))
+				L(r.Context()).Error("panic", zap.Error(err.(error)), zap.Stack("stack"))
 				http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 			}
 		}()
