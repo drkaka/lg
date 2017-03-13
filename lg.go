@@ -54,7 +54,7 @@ func L(ctx context.Context) *zap.Logger {
 	if l, ok := ctx.Value(requestIDKey).(*zap.Logger); ok {
 		return l
 	}
-	panic("Should have request logger.")
+	return log
 }
 
 // LogRequest to log every request.
