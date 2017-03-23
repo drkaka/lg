@@ -1,15 +1,16 @@
-hash: 96066ac6a330e905043a5997a3602922c5a6c5fb739a588a228b64005c3c5d0f
-updated: 2017-02-27T15:38:14.406012+08:00
+hash: e66f9a0a06649ef84661b84e7f965ea86af6b01994d1cf3a3d766de024fde246
+updated: 2017-03-23T14:41:37.6496202+08:00
 imports:
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 - name: go.uber.org/atomic
   version: 3b8db5e93c4c02efbc313e17b2e796b0914a01fb
 - name: go.uber.org/zap
-  version: a03b90bc236f3def382f17743518889a31f8187c
+  version: 4257c7cf05477d92ec25c31cfd3d60e89575f18a
   subpackages:
   - buffer
   - internal/bufferpool
+  - internal/color
   - internal/exit
   - internal/multierror
   - zapcore
@@ -19,6 +20,6 @@ testImports:
 - name: github.com/pborman/uuid
   version: 1b00554d822231195d1babd97ff4a781231955c9
 - name: golang.org/x/tools
-  version: 496819729719f9d07692195e0a94d6edd2251389
+  version: c21bc47f893ee73c18dd2119bb8ff9a2b492c4c6
   subpackages:
   - cover
