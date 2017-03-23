@@ -60,9 +60,11 @@ func L(ctx context.Context) *zap.Logger {
 // LogRequest to log every request.
 func LogRequest(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
+		// Add a requestID field to logger
 		l := log.With(zap.String("requestID", uuid.NewV1().String()))
-		ctx := r.Context()
-		ctx = context.WithValue(ctx, requestIDKey, l)
+		// Add logger to context
+		ctx := context.WithValue(r.Context(), requestIDKey, l)
+		// Request with this new context.
 		r = r.WithContext(ctx)
 
 		// Start timer
