@@ -73,6 +73,12 @@ func LogRequest(next http.Handler) http.Handler {
 		// wrap the ResponseWriter
 		lw := &basicWriter{ResponseWriter: w}
 
+		// Get the real IP even behind a proxy
+		realIP := r.Header.Get("X-Forwarded-For")
+		if len(realIP) == 0 {
+			realIP = r.RemoteAddr
+		}
+
 		// Process request
 		next.ServeHTTP(lw, r)
 		lw.maybeWriteHeader()
@@ -86,7 +92,7 @@ func LogRequest(next http.Handler) http.Handler {
 			zap.String("method", r.Method),
 			zap.String("url", r.RequestURI),
 			zap.Int("code", statusCode),
-			zap.String("clientIP", r.RemoteAddr),
+			zap.String("clientIP", realIP),
 			zap.Int("bytes", lw.bytes),
 			zap.Int64("duration", int64(latency)/int64(time.Microsecond)),
 		)

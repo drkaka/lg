@@ -1,5 +1,5 @@
 hash: 514d3cc0fefb1a2048b9121cd5126cb18307eac8c65b2c1b5c304bfc040eb830
-updated: 2017-06-06T22:13:09.382589674+08:00
+updated: 2017-06-07T15:39:41.4581123+08:00
 imports:
 - name: github.com/drkaka/ulid
   version: a4078d88d430f7f5c443e60820664d0eef7a1cc8
@@ -20,6 +20,6 @@ testImports:
 - name: github.com/pborman/uuid
   version: 1b00554d822231195d1babd97ff4a781231955c9
 - name: golang.org/x/tools
-  version: d83db204cec938a53072124e16d79022316b3dc5
+  version: 92d42b9ff15f625347a13b6aeafd04a33537ce91
   subpackages:
   - cover
