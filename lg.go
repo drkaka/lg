@@ -74,9 +74,14 @@ func LogRequest(next http.Handler) http.Handler {
 		lw := &basicWriter{ResponseWriter: w}
 
 		// Get the real IP even behind a proxy
-		realIP := r.Header.Get("X-Forwarded-For")
-		if len(realIP) == 0 {
-			realIP = r.RemoteAddr
+		realIP := r.Header.Get(http.CanonicalHeaderKey("X-Forwarded-For"))
+		if realIP == "" {
+			// if no content in header "X-Forwarded-For", get "X-Real-IP"
+			if xrip := r.Header.Get(http.CanonicalHeaderKey("X-Real-IP")); xrip != "" {
+				realIP = xrip
+			} else {
+				realIP = r.RemoteAddr
+			}
 		}
 
 		// Process request

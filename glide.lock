@@ -1,12 +1,12 @@
 hash: 514d3cc0fefb1a2048b9121cd5126cb18307eac8c65b2c1b5c304bfc040eb830
-updated: 2017-06-07T15:39:41.4581123+08:00
+updated: 2017-07-03T10:00:56.635416+08:00
 imports:
 - name: github.com/drkaka/ulid
   version: a4078d88d430f7f5c443e60820664d0eef7a1cc8
 - name: go.uber.org/atomic
   version: 4e336646b2ef9fc6e47be8e21594178f98e5ebcf
 - name: go.uber.org/zap
-  version: fab453050a7a08c35f31fc5fff6f2dbd962285ab
+  version: 9cabc84638b70e564c3dab2766efcb1ded2aac9f
   subpackages:
   - buffer
   - internal/bufferpool
@@ -18,8 +18,8 @@ testImports:
 - name: github.com/mattn/goveralls
   version: 9d621f6940639bf287ecbb6f585a2c26eeba3bbe
 - name: github.com/pborman/uuid
-  version: 1b00554d822231195d1babd97ff4a781231955c9
+  version: e790cca94e6cc75c7064b1332e63811d4aae1a53
 - name: golang.org/x/tools
-  version: 92d42b9ff15f625347a13b6aeafd04a33537ce91
+  version: 1b3bb8de7d39fe135abc674c1e6d642cce854d4a
   subpackages:
   - cover
